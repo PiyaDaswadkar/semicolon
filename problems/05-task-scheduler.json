@@ -1,0 +1,59 @@
+{
+  "id": 5,
+  "title": "Task Scheduler",
+  "tagline": "Schedule CPU tasks with cooldown intervals",
+  "category": "scheduling",
+  "difficulty": "medium",
+  "realWorld": "In real systems like the Linux kernel, the CPU runs many tasks, but some tasks cannot be executed continuously because they need time to cool down or wait for resources (like disk or network). So, the system schedules different tasks in between to keep the CPU busy and avoid overload. If no other task is available, the CPU stays idle for a short time. This is exactly what this problem represents—arranging tasks with a gap between the same tasks while minimizing idle time and keeping the system efficient",
+  "icon": "fa-solid fa-clock",
+  "description": "CPU scheduling with cooldown periods between identical tasks to prevent overload and allow cooling or resource waiting.",
+  "statement": "Given a characters array <code>tasks</code>, representing the tasks a CPU needs to do, where each letter represents a different task. Tasks could be done in any order. Each task is done in one unit of time. For each unit of time, the CPU could complete either one task or just be idle.<br><br>However, there is a non-negative integer <code>n</code> that represents the cooldown period between two same tasks (the same letter in the array), that is that there must be at least <code>n</code> units of time between any two same tasks.<br><br>Return the least number of units of time that the CPU will take to finish all the given tasks.",
+  "examples": [
+    {
+      "input": "tasks = [\"A\",\"A\",\"A\",\"B\",\"B\",\"B\"], n = 2",
+      "output": "8"
+    },
+    {
+      "input": "tasks = [\"A\",\"A\",\"A\",\"B\",\"B\",\"B\"], n = 0",
+      "output": "6"
+    },
+    {
+      "input": "tasks = [\"A\",\"A\",\"A\",\"A\",\"A\",\"A\",\"B\",\"C\",\"D\",\"E\",\"F\",\"G\"], n = 2",
+      "output": "16"
+    }
+  ],
+  "template": "function leastInterval(tasks, n) {\n  // Your code here\n}",
+  "animType": "array",
+  "animData": [
+    "A",
+    "A",
+    "A",
+    "B",
+    "B",
+    "B"
+  ],
+  "animSteps": [
+    {
+      "type": "msg",
+      "text": "Count task frequencies: A:3, B:3"
+    },
+    {
+      "type": "highlight",
+      "indices": [0,1,2],
+      "msg": "A appears 3 times"
+    },
+    {
+      "type": "highlight",
+      "indices": [3,4,5],
+      "msg": "B appears 3 times"
+    },
+    {
+      "type": "msg",
+      "text": "Max frequency is 3, cooldown n=2"
+    },
+    {
+      "type": "msg",
+      "text": "Formula: (3-1)*(2+1) + 2 = 8"
+    }
+  ]
+}
